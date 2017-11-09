@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1004266394306",
+    "firebase_url": "https://authentication-sharing.firebaseio.com",
+    "project_id": "authentication-sharing",
+    "storage_bucket": "authentication-sharing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004266394306:android:18b12b6d961fd7c5",
+        "android_client_info": {
+          "package_name": "com.securepenny.authenticationandsharing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004266394306-d2u6uj29mhqhhivbh022rfhrbe753ghf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.securepenny.authenticationandsharing",
+            "certificate_hash": "b61937a6e87cf3d2ca921bb875a24697fae11c17"
+          }
+        },
+        {
+          "client_id": "1004266394306-r8dq70tafck47gg34cj096sipgi169st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_G50uWWo-zCdczlBvDt5a8XNNYLU4JdY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004266394306-r8dq70tafck47gg34cj096sipgi169st.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

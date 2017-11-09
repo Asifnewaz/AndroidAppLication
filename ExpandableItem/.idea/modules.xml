@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ExpandableItem.iml" filepath="$PROJECT_DIR$/ExpandableItem.iml" />
+      <module fileurl="file://E:\GIT\ExpandableItem\ExpandableItem.iml" filepath="E:\GIT\ExpandableItem\ExpandableItem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\GIT\ExpandableItem\app\app.iml" filepath="E:\GIT\ExpandableItem\app\app.iml" />
+    </modules>
+  </component>
+</project>
