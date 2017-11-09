@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Advance RecyclerView</string>
+    <string name="menu_item_about">About</string>
+</resources>
