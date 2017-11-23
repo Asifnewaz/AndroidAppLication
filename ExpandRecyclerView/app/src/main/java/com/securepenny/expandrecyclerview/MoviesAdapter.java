@@ -68,6 +68,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
             public void onClick(View view) {
                 mExpandedPosition = isExpanded ? -1:pos; // for exapand
                 notifyDataSetChanged(); //// for exapand
+				
+				 // for new activity calling and data passing for specific position
+
+     //           Context context = view.getContext();
+     //           Intent intent = new Intent(context, DESIRED.class);
+     //              intent.putExtra("bill", moviesList.get(position));
+     //             context.startActivity(intent);
             }
         }); // for exapand end
     }
