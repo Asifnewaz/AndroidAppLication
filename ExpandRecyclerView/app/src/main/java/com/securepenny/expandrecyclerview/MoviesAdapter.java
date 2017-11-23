@@ -56,25 +56,31 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());
-
-
         //// for exapand  Start
-        final boolean isExpanded = position==mExpandedPosition; // for exapand
-        holder.linearLayout.setVisibility(isExpanded?View.VISIBLE:View.GONE); // for exapand
-        holder.linearLayout.setActivated(isExpanded); // for exapand
+        holder.linearLayout.setVisibility(position == mExpandedPosition ? View.VISIBLE : View.GONE);
 
         holder.year.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mExpandedPosition = isExpanded ? -1:pos; // for exapand
-                notifyDataSetChanged(); //// for exapand
-				
-				 // for new activity calling and data passing for specific position
-
-     //           Context context = view.getContext();
-     //           Intent intent = new Intent(context, DESIRED.class);
-     //              intent.putExtra("bill", moviesList.get(position));
-     //             context.startActivity(intent);
+                if (mExpandedPosition == -1)
+                {
+                    holder.linearLayout.setVisibility(View.VISIBLE);
+                    mExpandedPosition = pos;
+               } else if (mExpandedPosition == pos) {
+                   holder.linearLayout.setVisibility(View.GONE);
+                    mExpandedPosition = -1;
+                } else {
+                    int prevPosition = mExpandedPosition;
+                    holder.linearLayout.setVisibility(View.VISIBLE);
+                    mExpandedPosition = pos;
+                    notifyItemChanged(prevPosition);
+                }
+                // for new activity calling and data passing for specific position
+//
+//                Context context = view.getContext();
+//                Intent intent = new Intent(context, DESIRED.class);
+//                intent.putExtra("bill", moviesList.get(position));
+//                context.startActivity(intent);
             }
         }); // for exapand end
     }
