@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class="ItemBinding">
+        <variable
+            name="data"
+            type="com.securepenny.databindingbasic.DetailInfo"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="16dp"
+            android:layout_marginBottom="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:text="@{data.name}"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#ddd"
+                    android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:id="@+id/tvAge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:text="@{data.group}"/>
+
+                <ImageView
+                    android:id="@+id/ivShowMore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_keyboard_arrow_down_black_24dp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/llcardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="16dp"
+            android:layout_marginBottom="1dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@{data.title}"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="#ddd"
+                    android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:id="@+id/tvNameExp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@{data.name}"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="#ddd"
+                    android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:id="@+id/tvGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@{data.group}"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</layout>
