@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.securepenny.rideshare.Model.User;
 
+import dmax.dialog.SpotsDialog;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-
+                btnSignIn.setEnabled(false);
                 if (TextUtils.isEmpty(editEmail.getText().toString())) {
                     Snackbar.make(rootLayout, "Please Enter Email Address", Snackbar.LENGTH_LONG).show();
                     return;
@@ -109,11 +110,14 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.make(rootLayout, "Password Length is short", Snackbar.LENGTH_LONG).show();
                     return;
                 }
+                final SpotsDialog waitingDialog = new SpotsDialog(MainActivity.this);
+                waitingDialog.show();
 
                 auth.signInWithEmailAndPassword(editEmail.getText().toString(), editPassword.getText().toString())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
+                                waitingDialog.dismiss();
                                 Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -122,7 +126,9 @@ public class MainActivity extends AppCompatActivity {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
+                                waitingDialog.dismiss();
                                 Snackbar.make(rootLayout, "Failed " + e.getMessage(), Snackbar.LENGTH_LONG).show();
+                                btnSignIn.setEnabled(true);
                             }
                         });
             }
@@ -157,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
+                //on processing Singin Button disable
 
                 if (TextUtils.isEmpty(editEmail.getText().toString())){
                     Snackbar.make(rootLayout,"Please Enter Email Address", Snackbar.LENGTH_LONG).show();
@@ -164,17 +171,17 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (TextUtils.isEmpty(editName.getText().toString())){
-                    Snackbar.make(rootLayout,"Please Enter Name Address", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(rootLayout,"Please Enter Name ", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(editPhone.getText().toString())){
-                    Snackbar.make(rootLayout,"Please Enter Phone Address", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(rootLayout,"Please Enter Phone number", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(editPassword.getText().toString())){
-                    Snackbar.make(rootLayout,"Please Enter PAsswrd Address", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(rootLayout,"Please Enter Password", Snackbar.LENGTH_LONG).show();
                     return;
                 }
                 if (editPassword.getText().toString().length()<6){
